@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python manage.py runserver localhost:8088
+python manage.py runserver localhost:8080
