@@ -1,2 +1,3 @@
 staticfiles-cdn/
 .DS_Store
+Pipfile*
