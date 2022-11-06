@@ -41,9 +41,14 @@
               <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                     <div class="login-form-head">
-                        <h4>Sign In</h4>
-                        <p>Hello there, Sign in and start managing your Admin Template</p>
+                        <h4>Sistema de Ventas e Inventarios</h4>
+                        <p>Hola, usted está intentando ingresar al sistema de Ventas e Inventarios</p>
                     </div>
+          {% if form.errors %}
+          <div class="alert alert-danger" role="alert">
+              <strong>¡Atención!</strong> El nombre de usuario y contraseña no coinciden. Por favor intente de nuevo.
+          </div>
+          {% endif %}
                     <div class="login-form-body">
                         <div class="form-gp">
                             <label for="id_username">Nombre de Usuario</label>
@@ -52,7 +57,7 @@
                             <div class="text-danger"></div>
                         </div>
                         <div class="form-gp">
-                            <label for="id_password">Password</label>
+                            <label for="id_password">Contraseña</label>
                             <input type="password" name="password" required id="id_password">
                             <i class="ti-lock"></i>
                             <div class="text-danger"></div>
@@ -61,19 +66,20 @@
                             <div class="col-6">
                                 <div class="custom-control custom-checkbox mr-sm-2">
                                     <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                    <label class="custom-control-label" for="customControlAutosizing">Recordar mi sesión</label>
                                 </div>
                             </div>
                             <div class="col-6 text-right">
-                                <a href="#">Forgot Password?</a>
+                                <a href="#">Recuperar Contraseña</a>
                             </div>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                            <button id="form_submit" type="submit">Ingresar <i class="ti-arrow-right"></i></button>
                             <input type="hidden" name="next" value="{{ next }}">
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                            <!-- <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p> -->
+                            <p class="text-muted">Si no posee su nombre de usario y contraseña, por favor contacte al administrador.</p>
                         </div>
                     </div>
                 </form>
