@@ -1,9 +1,11 @@
 from django.shortcuts import redirect
 # from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
+
+from core.models import Store
 
 
 class LoginView(LoginView):
@@ -18,3 +20,8 @@ def logout_view(request):
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "core/index.html"
+
+
+class StoreIndexView(ListView):
+    template_name = 'core/store-index.html'
+    model = Store
