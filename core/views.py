@@ -20,8 +20,12 @@ def logout_view(request):
 
 class IndexView(LoginRequiredMixin, TemplateView):
     template_name = "core/index.html"
+    extra_context = {'title': 'Dashboard', 'dashboard_active': True}
 
 
 class StoreIndexView(ListView):
     template_name = 'core/store-index.html'
     model = Store
+    extra_context = {'title': 'Tiendas',
+                     'admin_active': True,
+                     'stores_active': True}

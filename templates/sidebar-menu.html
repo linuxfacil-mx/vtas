@@ -11,13 +11,13 @@
         <div class="menu-inner">
             <nav>
                 <ul class="metismenu" id="menu">
-                    <li class="active">
-                        <a href="#"><i class="ti-dashboard"></i><span>Dashboard</span></a>
+                    <li {% if dashboard_active  %} class="active"{% endif %}>
+                        <a href="{% url 'dashboard' %}"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                     </li>
-                    <li>
+                    <li {% if admin_active  %} class="active"{% endif %}>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-panel"></i><span>Administración</span></a>
                         <ul class="collapse">
-                            <li class="active">
+                            <li {% if stores_active  %} class="active"{% endif %}>
                                 <a href="{% url 'stores' %}">Tiendas</a>
                             </li>
                             <li>
