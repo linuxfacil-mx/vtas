@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="header-title">Producto Nuevo</h4>
+                    <form class="needs-validation" novalidate="" method="post">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="id_code">Código del Producto</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="code"
+                                       id="id_code"
+                                       required=""
+                                       required>
+                                <!-- <div class="valid-feedback">Looks good!</div> -->
+                                <div class="invalid-feedback">Ingrese los 4 caracteres del codigo del Producto</div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label for="id_name">Descripción</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="description"
+                                       id="id_description"
+                                       required=""
+                                       required>
+                                <div class="invalid-feedback">Ingrese la Descripción del Producto</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Crear Producto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Productos</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table table-striped text-center">
+                                <thead class="text-uppercase">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for product in object_list %}
+                                        <tr>
+                                            <th scope="row">{{ product.id }}</th>
+                                            <td>{{ product.code }}</td>
+                                            <td>{{ product.description }}</td>
+                                            <td>
+                                                <i class="ti-pencil"></i> <i class="ti-trash"></i>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
