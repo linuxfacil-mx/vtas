@@ -9,56 +9,49 @@
                     <form class="needs-validation" novalidate="" method="post">
                         {% csrf_token %}
                         <div class="form-row">
-                            {{ form.as_p }}
-                            <!--     <div class="col-md-6 mb-3"> -->
-                            <!--         <label for="validationCustom01">Código de la Tienda</label> -->
-                            <!--         <input type="text" -->
-                            <!--                class="form-control" -->
-                            <!--                id="validationCustom01" -->
-                            <!--                placeholder="First name" -->
-                            <!--                value="Mark" -->
-                            <!--                required=""> -->
-                            <!--         <div class="valid-feedback">Looks good!</div> -->
-                            <!--     </div> -->
-                            <!--     <div class="col-md-6 mb-3"> -->
-                            <!--         <label for="validationCustom02">Nombre</label> -->
-                            <!--         <input type="text" -->
-                            <!--                class="form-control" -->
-                            <!--                id="validationCustom02" -->
-                            <!--                placeholder="Last name" -->
-                            <!--                value="Otto" -->
-                            <!--                required=""> -->
-                            <!--         <div class="valid-feedback">Looks good!</div> -->
-                            <!--     </div> -->
-                            <!-- </div> -->
-                            <!-- <div class="form-row"> -->
-                            <!--     <div class="col-md-6 mb-3"> -->
-                            <!--         <label for="validationCustom03">Dirección</label> -->
-                            <!--         <input type="text" -->
-                            <!--                class="form-control" -->
-                            <!--                id="validationCustom03" -->
-                            <!--                placeholder="City" -->
-                            <!--                required=""> -->
-                            <!--         <div class="invalid-feedback">Please provide a valid city.</div> -->
-                            <!--     </div> -->
-                            <!--     <div class="col-md-3 mb-3"> -->
-                            <!--         <label for="validationCustom04">Estado</label> -->
-                            <!--         <input type="text" -->
-                            <!--                class="form-control" -->
-                            <!--                id="validationCustom04" -->
-                            <!--                placeholder="State" -->
-                            <!--                required=""> -->
-                            <!--         <div class="invalid-feedback">Please provide a valid state.</div> -->
-                            <!--     </div> -->
-                            <!--     <div class="col-md-3 mb-3"> -->
-                            <!--         <label for="validationCustom05">Código Postal</label> -->
-                            <!--         <input type="text" -->
-                            <!--                class="form-control" -->
-                            <!--                id="validationCustom05" -->
-                            <!--                placeholder="Zip" -->
-                            <!--                required=""> -->
-                            <!--         <div class="invalid-feedback">Please provide a valid zip.</div> -->
-                            <!--     </div> -->
+                            <div class="col-md-4 mb-3">
+                                <label for="id_code">Código de la Tienda</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="code"
+                                       id="id_code"
+                                       required=""
+                                       required>
+                                <!-- <div class="valid-feedback">Looks good!</div> -->
+                                <div class="invalid-feedback">Ingrese los 4 caracteres del codigo de la Tienda</div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label for="id_name">Nombre</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="name"
+                                       id="id_name"
+                                       required=""
+                                       required>
+                                <div class="invalid-feedback">Ingrese el Nombre de la Tienda</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_address">Dirección</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="address"
+                                       id="id_address"
+                                       required
+                                       required="">
+                                <div class="invalid-feedback">Ingrese la Direccion</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="id_phone">Telefono</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="phone"
+                                       id="id_phone"
+                                       required
+                                       required="">
+                                <div class="invalid-feedback">Ingrese el numero de Telefono</div>
+                            </div>
                         </div>
                         <button class="btn btn-primary" type="submit">Crear Tienda</button>
                     </form>

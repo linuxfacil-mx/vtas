@@ -25,7 +25,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
     extra_context = {'title': 'Dashboard', 'dashboard_active': True}
 
 
-class StoreIndexView(CreateView, ListView):
+class StoreIndexView(LoginRequiredMixin, CreateView, ListView):
     template_name = 'core/store-index.html'
     model = Store
     fields = ['code', 'name', 'address', 'phone']
