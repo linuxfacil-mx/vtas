@@ -22,27 +22,31 @@ class Product(models.Model):
     created_dt = models.DateTimeField(auto_now_add=True)
     updated_dt = models.DateTimeField(auto_now=True)
 
-# class Supplier(models.Model):
-#     code = models.CharField(max_length=10)
-#     name = models.CharField(max_length=50)
-#     address = models.CharField(max_length=50)
-#     phone = models.CharField(max_length=50)
-#     email = models.EmailField()
-#     created_dt = models.DateTimeField(auto_now_add=True)
-#     created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-#     updated_dt = models.DateTimeField(auto_now=True)
-#     updated_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-#
-#
-# class Customer(models.Model):
-#     code = models.CharField(max_length=10)
-#     name = models.CharField(max_length=50)
-#     address = models.CharField(max_length=50)
-#     phone = models.CharField(max_length=50)
-#     email = models.EmailField()
-#     created_dt = models.DateTimeField(auto_now_add=True)
-#     created_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-#     updated_dt = models.DateTimeField(auto_now=True)
-#     updated_by = models.ForeignKey(User, on_delete=models.DO_NOTHING)
-#
-#
+    def __str__(self):
+        return self.code
+
+
+class Supplier(models.Model):
+    code = models.CharField(max_length=10)
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField()
+    created_dt = models.DateTimeField(auto_now_add=True)
+    updated_dt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.code
+
+
+class Customer(models.Model):
+    code = models.CharField(max_length=10)
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField()
+    created_dt = models.DateTimeField(auto_now_add=True)
+    updated_dt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.code
