@@ -23,11 +23,11 @@
                             <li {% if products_active  %} class="active"{% endif %}>
                                 <a href="{% url 'products' %}">Productos</a>
                             </li>
-                            <li {% if providers_active  %} class="active"{% endif %}>
+                            <li {% if suppliers_active  %} class="active"{% endif %}>
                                 <a href="{% url 'suppliers' %}">Proveedores</a>
                             </li>
                             <li {% if customers_active  %} class="active"{% endif %}>
-                                <a href="#">Clientes</a>
+                                <a href="{% url 'customers' %}">Clientes</a>
                             </li>
                         </ul>
                     </li>

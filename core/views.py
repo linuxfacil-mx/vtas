@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from core.models import Store, Product, Supplier
+from core.models import Store, Product, Supplier, Customer
 
 
 class CustomLoginView(LoginView):
@@ -52,4 +52,14 @@ class SupplierIndexView(LoginRequiredMixin, CreateView, ListView):
     success_url = reverse_lazy('suppliers')
     extra_context = {'title': 'Proveedores',
                      'admin_active': True,
-                     'supplier_active': True}
+                     'suppliers_active': True}
+
+
+class CustomerIndexView(LoginRequiredMixin, CreateView, ListView):
+    template_name = 'core/customer-index.html'
+    model = Customer
+    fields = ['code', 'name', 'address', 'phone', 'email']
+    success_url = reverse_lazy('customers')
+    extra_context = {'title': 'Clientes',
+                     'admin_active': True,
+                     'customers_active': True}
