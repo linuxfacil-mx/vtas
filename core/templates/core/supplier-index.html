@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="header-title">Proveedor Nuevo</h4>
+                    <form class="needs-validation" novalidate="" method="post">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="id_code">Código de la Proveedor</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="code"
+                                       id="id_code"
+                                       required=""
+                                       required>
+                                <!-- <div class="valid-feedback">Looks good!</div> -->
+                                <div class="invalid-feedback">Ingrese los 4 caracteres del codigo de la Proveedor</div>
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label for="id_name">Nombre</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="name"
+                                       id="id_name"
+                                       required=""
+                                       required>
+                                <div class="invalid-feedback">Ingrese el Nombre de la Proveedor</div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="id_address">Dirección</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="address"
+                                       id="id_address"
+                                       required
+                                       required="">
+                                <div class="invalid-feedback">Ingrese la Direccion</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="id_email">Correo Electrónico</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="email"
+                                       id="id_email"
+                                       required
+                                       required="">
+                                <div class="invalid-feedback">Ingrese el Correo Electrónico del Proveedor</div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="id_phone">Telefono</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="phone"
+                                       id="id_phone"
+                                       required
+                                       required="">
+                                <div class="invalid-feedback">Ingrese el numero de Telefono</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Crear Proveedor</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Proveedores</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table table-striped text-center">
+                                <thead class="text-uppercase">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Dirección</th>
+                                        <th scope="col">action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for store in object_list %}
+                                        <tr>
+                                            <th scope="row">{{ store.id }}</th>
+                                            <td>{{ store.code }}</td>
+                                            <td>{{ store.name }}</td>
+                                            <td>{{ store.address }}</td>
+                                            <td>
+                                                <i class="ti-pencil"></i> <i class="ti-trash"></i>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

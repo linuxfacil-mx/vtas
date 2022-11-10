@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import IndexView, CustomLoginView, logout_view, StoreIndexView, ProductIndexView
+from .views import (IndexView, CustomLoginView, logout_view,
+                    StoreIndexView, ProductIndexView, SupplierIndexView)
 
 urlpatterns = [
     path('', IndexView.as_view(), name='dashboard'),
@@ -8,4 +9,5 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('stores/', StoreIndexView.as_view(), name='stores'),
     path('products/', ProductIndexView.as_view(), name='products'),
+    path('suppliers/', SupplierIndexView.as_view(), name='suppliers'),
 ]
