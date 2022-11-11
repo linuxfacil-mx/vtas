@@ -31,8 +31,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a>
+                    <li {% if sales_active  %} class="active"{% endif %}>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="ti-bag"></i><span>Ventas</span></a>
+                        <ul class="collapse">
+                            <li {% if sales_active  %} class="active"{% endif %}>
+                                <a href="{% url 'stores' %}">Facturacion</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                     <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
