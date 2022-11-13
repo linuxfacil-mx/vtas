@@ -40,36 +40,45 @@
                         </ul>
                     </li>
                     <li>
-                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
-                    <span>Multilevel menu</span></a>
-                <ul class="collapse">
-                    <li>
-                        <a href="#">Item level (1)</a>
-                    </li>
-                    <li>
-                        <a href="#">Item level (1)</a>
-                    </li>
-                    <li>
-                        <a href="#" aria-expanded="true">Item level (1)</a>
-                        <ul class="collapse">
-                            <li>
-                                <a href="#">Item level (2)</a>
-                            </li>
-                            <li>
-                                <a href="#">Item level (2)</a>
-                            </li>
-                            <li>
-                                <a href="#">Item level (2)</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Item level (1)</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</div>
+                        <li {% if inventory_active  %} class="active"{% endif %}>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-bag"></i><span>Inventarios</span></a>
+                            <ul class="collapse">
+                                <li {% if sales_active  %} class="active"{% endif %}>
+                                    <a href="{% url 'dashboard' %}">Ordenes de Compras</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
+                        <span>Multilevel menu</span></a>
+                    <ul class="collapse">
+                        <li>
+                            <a href="#">Item level (1)</a>
+                        </li>
+                        <li>
+                            <a href="#">Item level (1)</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-expanded="true">Item level (1)</a>
+                            <ul class="collapse">
+                                <li>
+                                    <a href="#">Item level (2)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Item level (2)</a>
+                                </li>
+                                <li>
+                                    <a href="#">Item level (2)</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Item level (1)</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 </div>
