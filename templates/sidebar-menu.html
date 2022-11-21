@@ -43,8 +43,8 @@
                         <li {% if inventory_active  %} class="active"{% endif %}>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-bag"></i><span>Inventarios</span></a>
                             <ul class="collapse">
-                                <li {% if sales_active  %} class="active"{% endif %}>
-                                    <a href="{% url 'dashboard' %}">Ordenes de Compras</a>
+                                <li {% if po_active  %} class="active"{% endif %}>
+                                    <a href="{% url 'PO_index' %}">Ordenes de Compras</a>
                                 </li>
                             </ul>
                         </li>

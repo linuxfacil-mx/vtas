@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="header-title">Crear Orden de Compra</h4>
+                    <button type="button" class="btn btn-primary mb-3">Nueva Orden de Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="header-title">Listado de Ordenes de Compra</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table table-striped text-center">
+                                <thead class="text-uppercase">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">No. de Orden</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Total $</th>
+                                        <th scope="col">Eliminar/Editar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td>
+                                            <i class="ti-trash"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td>
+                                            <i class="ti-trash"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$120</td>
+                                        <td>
+                                            <i class="ti-trash"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>jone</td>
+                                        <td>09 / 07 / 2018</td>
+                                        <td>$150</td>
+                                        <td>
+                                            <i class="ti-trash"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
