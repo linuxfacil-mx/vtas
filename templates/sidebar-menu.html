@@ -3,7 +3,7 @@
     <div class="sidebar-header">
         <div class="logo">
             <a href="#">
-                <img src="{% static 'assets/images/icon/logo.png' %}" alt="logo">
+                <img src="{% static 'assets/images/icon/logo.png' %}" alt="logo"/>
             </a>
         </div>
     </div>
@@ -11,74 +11,78 @@
         <div class="menu-inner">
             <nav>
                 <ul class="metismenu" id="menu">
-                    <li {% if dashboard_active  %} class="active"{% endif %}>
+                    <li {% if dashboard_active  %}class="active"{% endif %}>
                         <a href="{% url 'dashboard' %}"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                     </li>
-                    <li {% if admin_active  %} class="active"{% endif %}>
+                    <li {% if admin_active  %}class="active"{% endif %}>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-panel"></i><span>Administración</span></a>
                         <ul class="collapse">
-                            <li {% if stores_active  %} class="active"{% endif %}>
+                            <li {% if stores_active  %}class="active"{% endif %}>
                                 <a href="{% url 'stores' %}">Tiendas</a>
                             </li>
-                            <li {% if products_active  %} class="active"{% endif %}>
+                            <li {% if products_active  %}class="active"{% endif %}>
                                 <a href="{% url 'products' %}">Productos</a>
                             </li>
-                            <li {% if suppliers_active  %} class="active"{% endif %}>
+                            <li {% if suppliers_active  %}class="active"{% endif %}>
                                 <a href="{% url 'suppliers' %}">Proveedores</a>
                             </li>
-                            <li {% if customers_active  %} class="active"{% endif %}>
+                            <li {% if customers_active  %}class="active"{% endif %}>
                                 <a href="{% url 'customers' %}">Clientes</a>
+                            </li>
+                            <li {% if po_status_active  %}class="active"{% endif %}>
+                                <a href="{% url 'po_status' %}">Status - Ordenes de Compra</a>
                             </li>
                         </ul>
                     </li>
-                    <li {% if sales_active  %} class="active"{% endif %}>
+                    <li {% if sales_active  %}class="active"{% endif %}>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-bag"></i><span>Ventas</span></a>
                         <ul class="collapse">
-                            <li {% if sales_active  %} class="active"{% endif %}>
+                            <li {% if sales_active  %}class="active"{% endif %}>
                                 <a href="{% url 'stores' %}">Facturacion</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <li {% if inventory_active  %} class="active"{% endif %}>
+                        <li {% if inventory_active  %}class="active"{% endif %}>
                             <a href="javascript:void(0)" aria-expanded="true"><i class="ti-bag"></i><span>Inventarios</span></a>
                             <ul class="collapse">
-                                <li {% if po_active  %} class="active"{% endif %}>
+                                <li {% if po_active  %}class="active"{% endif %}>
                                     <a href="{% url 'PO_index' %}">Ordenes de Compras</a>
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                        <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
-                        <span>Multilevel menu</span></a>
-                    <ul class="collapse">
-                        <li>
-                            <a href="#">Item level (1)</a>
-                        </li>
-                        <li>
-                            <a href="#">Item level (1)</a>
-                        </li>
-                        <li>
-                            <a href="#" aria-expanded="true">Item level (1)</a>
-                            <ul class="collapse">
-                                <li>
-                                    <a href="#">Item level (2)</a>
-                                </li>
-                                <li>
-                                    <a href="#">Item level (2)</a>
-                                </li>
-                                <li>
-                                    <a href="#">Item level (2)</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Item level (1)</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
+                    </li>
+                    <li>
+                    <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-align-left"></i>
+                    <span>Multilevel menu</span></a>
+                <ul class="collapse">
+                    <li>
+                        <a href="#">Item level (1)</a>
+                    </li>
+                    <li>
+                        <a href="#">Item level (1)</a>
+                    </li>
+                    <li>
+                        <a href="#" aria-expanded="true">Item level (1)</a>
+                        <ul class="collapse">
+                            <li>
+                                <a href="#">Item level (2)</a>
+                            </li>
+                            <li>
+                                <a href="#">Item level (2)</a>
+                            </li>
+                            <li>
+                                <a href="#">Item level (2)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Item level (1)</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
 </div>
 </div>

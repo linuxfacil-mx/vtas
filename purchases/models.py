@@ -5,12 +5,20 @@ from core.models import Store, Product, Supplier
 User = get_user_model()
 
 
+class POStatus(models.Model):
+    code = models.CharField(max_length=10, null=False, blank=False)
+    status = models.CharField(max_length=30, null=False, blank=False)
+    seq = models.IntegerField(null=False, blank=False, unique=True)
+    created_dt = models.DateTimeField(auto_now_add=True)
+    updated_dt = models.DateTimeField(auto_now=True)
+
 class POHeader(models.Model):
     code = models.CharField(max_length=10, null=False, blank=False)
     po_dt = models.DateField(auto_now_add=True)
     store_fk = models.ForeignKey(Store, on_delete=models.CASCADE)
     supplier_fk = models.ForeignKey(Supplier, on_delete=models.CASCADE)
     user_fk = models.ForeignKey(User, on_delete=models.CASCADE)
+    status_fk = models.ForeignKey(POStatus, on_delete=models.DO_NOTHING)
     created_dt = models.DateTimeField(auto_now_add=True)
     updated_dt = models.DateTimeField(auto_now=True)
 
@@ -23,3 +31,4 @@ class PODetail(models.Model):
         max_digits=10, decimal_places=2, null=False, blank=False)
     created_dt = models.DateTimeField(auto_now_add=True)
     updated_dt = models.DateTimeField(auto_now=True)
+

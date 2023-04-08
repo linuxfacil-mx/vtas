@@ -5,12 +5,23 @@
         <div class="col-12">
             <div class="card mt-5">
                 <div class="card-body">
-                    <h4 class="header-title">Producto Nuevo</h4>
-                    <form class="needs-validation" novalidate="" method="post">
+                    <h4 class="header-title">Status de Ordenes de Compra</h4>
+                    <form class="needs=validation" novalidate="" method="post">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <label for="id_code">Código del Producto</label>
+                                <label for="id_seq">Secuencia</label>
+                                <input type="text"
+                                       class="form-control"
+                                       name="seq"
+                                       id="id_seq"
+                                       required=""
+                                       required/>
+                                <!-- <div class="valid-feedback">Looks good!</div> -->
+                                <div class="invalid-feedback">Ingrese el numero de la secuencia</div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="id_code">Codigo</label>
                                 <input type="text"
                                        class="form-control"
                                        name="code"
@@ -18,20 +29,20 @@
                                        required=""
                                        required/>
                                 <!-- <div class="valid-feedback">Looks good!</div> -->
-                                <div class="invalid-feedback">Ingrese los 4 caracteres del codigo del Producto</div>
+                                <div class="invalid-feedback">Ingrese los 4 caracteres del codigo del Status</div>
                             </div>
-                            <div class="col-md-8 mb-3">
-                                <label for="id_name">Descripción</label>
+                            <div class="col-md-4 mb-3">
+                                <label for="id_status">Estatus</label>
                                 <input type="text"
                                        class="form-control"
-                                       name="description"
-                                       id="id_description"
+                                       name="status"
+                                       id="id_status"
                                        required=""
                                        required/>
-                                <div class="invalid-feedback">Ingrese la Descripción del Producto</div>
+                                <div class="invalid-feedback">Ingrese el Estatus</div>
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Crear Producto</button>
+                        <button class="btn btn-primary" type="submit">Guardar</button>
                     </form>
                 </div>
             </div>
@@ -41,24 +52,24 @@
         <div class="col-lg-12 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="header-title">Productos</h4>
+                    <h4 class="header-title">Status</h4>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table class="table table-striped text-center">
                                 <thead class="text-uppercase">
                                     <tr>
-                                        <th scope="col">ID</th>
+                                        <th scope="col">Secuencia</th>
                                         <th scope="col">Código</th>
-                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for product in object_list %}
+                                    {% for status in object_list %}
                                         <tr>
-                                            <th scope="row">{{ product.id }}</th>
-                                            <td>{{ product.code }}</td>
-                                            <td>{{ product.description }}</td>
+                                            <th scope="row">{{ status.seq }}</th>
+                                            <td>{{ status.code }}</td>
+                                            <td>{{ status.status }}</td>
                                             <td>
                                                 <i class="ti-pencil"></i> <i class="ti-trash"></i>
                                             </td>
